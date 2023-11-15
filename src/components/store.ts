@@ -14,6 +14,6 @@ export const useNavStore = create<NavStore>((set) => ({
   lastPageIndex: 0,
   isTransitioning: false,
   setPageIndex: (pageIndex) => set(() => ({ pageIndex })),
-  setLastPageIndex: (pageIndex) => set(() => ({ pageIndex })),
+  setLastPageIndex: (lastPageIndex) => set(() => ({ lastPageIndex })),
   setIsTransitioning: (isTransitioning) => set(() => ({ isTransitioning })),
 }));
