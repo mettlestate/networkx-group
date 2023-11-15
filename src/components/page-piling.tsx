@@ -10,41 +10,43 @@ import {
   useState,
 } from "react";
 import { Transition } from "react-transition-group";
+import { useNavStore } from "./store";
 
 interface IPagePiling {
   initialView?: number;
   children: ReactNode[];
-  onViewChange?: (view: number) => void;
+  onViewChange?: (pageIndex: number) => void;
 }
 
 export default function PagePiling(props: IPagePiling) {
-  const [view, setView] = useState(props.initialView || 0);
-  const [lastView, setLastView] = useState(0);
-  const [transitioning, setTransitioning] = useState(false);
+  const store = useNavStore();
 
-  const startTransition = () => setTransitioning(true);
-  const endTransition = () => setTransitioning(false);
+  const startTransition = () => store.setIsTransitioning(true);
+  const endTransition = () => store.setIsTransitioning(false);
 
   function changeView(newView: number) {
-    if (!transitioning) {
-      setLastView(view);
-      setView(newView);
-      history.replaceState({}, "", `${window.location.origin}?view=${view}`);
+    if (!store.isTransitioning) {
+      store.setLastPageIndex(store.pageIndex);
+      store.setPageIndex(newView);
+      // history.replaceState({}, "", `${window.location.origin}?store.pageIndex=${store.pageIndex}`);
     }
   }
 
-  const navigateUp = () => (view > 0 ? changeView(view - 1) : null);
+  const navigateUp = () =>
+    store.pageIndex > 0 ? changeView(store.pageIndex - 1) : null;
   const navigateDown = () =>
-    view < props.children.length - 1 ? changeView(view + 1) : null;
+    store.pageIndex < props.children.length - 1
+      ? changeView(store.pageIndex + 1)
+      : null;
 
   function renderChildren() {
-    const direction = view > lastView ? 1 : -1;
+    const direction = store.pageIndex > store.lastPageIndex ? 1 : -1;
     return Children.map(props.children, (child, index) => {
       return (
         <PagePilingSection
           key={index}
           direction={direction}
-          open={index === view}
+          open={index === store.pageIndex}
           navigateUp={navigateUp}
           navigateDown={navigateDown}
           startTransition={startTransition}
@@ -82,7 +84,7 @@ function PagePilingSection({
   startTransition,
   endTransition,
 }: IPagePilingSection) {
-  const duration = 500;
+  const duration = 400;
 
   function handleScrollBehavior(currentTarget: Element, change: number) {
     const { clientHeight, scrollHeight, scrollTop } = currentTarget;
@@ -95,6 +97,7 @@ function PagePilingSection({
 
   const onWheel = (e: WheelEvent) =>
     handleScrollBehavior(e.currentTarget, e.deltaY);
+
   const onTouchScroll = ({
     currentTarget,
     direction,
@@ -102,7 +105,9 @@ function PagePilingSection({
     currentTarget: Element;
     direction: number;
   }) => handleScrollBehavior(currentTarget, direction);
+
   const { onTouchMove, onTouchStart } = useOnTouchScroll(onTouchScroll);
+
   function animateSlide(
     node: HTMLElement,
     done: () => void,
@@ -111,16 +116,18 @@ function PagePilingSection({
     const keyframes =
       direction > 0
         ? [
-            { transform: `translateY(-100%)`, zIndex: 1 },
-            { transform: `translateY(0)`, zIndex: 1 },
+            { transform: `translateY(-100%)`, zIndex: 49 },
+            { transform: `translateY(0)`, zIndex: 49 },
           ]
         : [
-            { transform: `translateY(0)`, zIndex: 1 },
-            { transform: `translateY(-100%)`, zIndex: 1 },
+            { transform: `translateY(0)`, zIndex: 49 },
+            { transform: `translateY(-100%)`, zIndex: 49 },
           ];
+
     startTransition();
+
     node.animate(keyframes, {
-      duration: duration + 500,
+      duration: duration + 20,
       easing: "ease-out",
     }).onfinish = () => {
       endTransition();
@@ -145,6 +152,11 @@ function PagePilingSection({
     }
   }
 
+  const transitionStyles: { [key: string]: any } = {
+    entering: { opacity: 1 },
+    entered: { opacity: 1 },
+  };
+
   return (
     <Transition
       in={open}
@@ -154,14 +166,17 @@ function PagePilingSection({
       mountOnEnter={true}
       unmountOnExit={true}
     >
-      <div
-        className="absolute w-full h-full top-0 overflow-y-auto"
-        onWheel={onWheel}
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-      >
-        {children}
-      </div>
+      {(state) => (
+        <div
+          style={transitionStyles[state]}
+          className="absolute w-full h-full top-0 overflow-y-auto"
+          onWheel={onWheel}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+        >
+          {children}
+        </div>
+      )}
     </Transition>
   );
 }
@@ -171,8 +186,8 @@ function useOnTouchScroll(
     currentTarget,
     direction,
   }: {
-    currentTarget: any;
-    direction: any;
+    currentTarget: Element;
+    direction: number;
   }) => void
 ) {
   const startLocation = useRef<number>(0);

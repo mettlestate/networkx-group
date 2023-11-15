@@ -14,7 +14,7 @@ export const SectionAbout = () => {
   return (
     <div className="relative flex flex-col justify-center items-center bg-black w-full h-full text-white pt-16">
       <div className="container flex flex-col gap-16">
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="w-full space-y-8">
             <motion.h1
               initial={{
@@ -65,9 +65,23 @@ export const SectionAbout = () => {
               </p>
             </motion.div>
           </div>
-          <div className="w-full">
+          <motion.div
+            initial={{
+              opacity: 0,
+              translateX: "100px",
+            }}
+            whileInView={{
+              opacity: 1,
+              translateX: 0,
+            }}
+            transition={{
+              duration: 1,
+              delay: 0,
+            }}
+            className="w-full"
+          >
             <video src="/assets/videos/humanly-possible.mp4" controls />
-          </div>
+          </motion.div>
         </div>
         <motion.div
           initial={{
