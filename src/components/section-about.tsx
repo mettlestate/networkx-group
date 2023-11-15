@@ -55,10 +55,10 @@ export const SectionAbout = () => {
                 We work side by side to make sure our clients targets are
                 achieved holistically - through experts in different fields.
                 From years crossing paths and working together successfully we
-                decided to form partnerships with the industry's strongest. We
-                created ways of working which benefit our clients and the
+                decided to form partnerships with the industry&apos;s strongest.
+                We created ways of working which benefit our clients and the
                 different needs of each one. Each company has a full inhouse
-                team, consisting of the industry's best in their respective
+                team, consisting of the industry&apos;s best in their respective
                 fields. We provided multi-layered strategies (From ideas to
                 implementation), which have an award-winning proven track record
                 of achieving client KPIs.
