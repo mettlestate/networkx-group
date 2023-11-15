@@ -27,7 +27,7 @@ export const SectionAbout = () => {
               }}
               transition={{
                 duration: 1,
-                delay: 0.5,
+                delay: 0,
               }}
               className="text-6xl text-accent font-bold tracking-wider uppercase"
             >
@@ -69,7 +69,21 @@ export const SectionAbout = () => {
             <video src="/assets/videos/humanly-possible.mp4" controls />
           </div>
         </div>
-        <div className="flex w-full px-8 py-4 items-center justify-center gap-8 flex-wrap">
+        <motion.div
+          initial={{
+            opacity: 0,
+            translateY: "100px",
+          }}
+          whileInView={{
+            opacity: 1,
+            translateY: 0,
+          }}
+          transition={{
+            duration: 1,
+            delay: 1,
+          }}
+          className="flex w-full px-8 py-4 items-center justify-center gap-8 flex-wrap"
+        >
           <Image
             src={ImgNetworkX}
             alt="network-x"
@@ -100,7 +114,7 @@ export const SectionAbout = () => {
             alt="kasi-kulcha"
             className="max-h-[60px] h-full w-auto"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

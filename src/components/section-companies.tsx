@@ -19,7 +19,7 @@ export const SectionCompanies1 = () => {
     <div
       className="relative flex flex-col justify-center items-center bg-black w-full h-full text-white overflow-hidden pt-16"
       style={{
-        backgroundImage: `url("${ImgBgWaves1.src}")`,
+        // backgroundImage: `url("${ImgBgWaves1.src}")`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center center",
@@ -27,7 +27,7 @@ export const SectionCompanies1 = () => {
     >
       <div className="flex items-center w-full justify-center">
         <div className="z-0">
-          <motion.div
+          {/* <motion.div
             initial={{
               translateX: "-100%",
             }}
@@ -54,7 +54,7 @@ export const SectionCompanies1 = () => {
               delay: 0.5,
             }}
             className="absolute bottom-0 right-0 rounded-full bg-gray-900 w-[30vw] h-[30vw]"
-          ></motion.div>
+          ></motion.div> */}
         </div>
         <div className="container space-y-8 z-20">
           {/* <div className="absolute top-1/4 left-8 text-white/80">4</div> */}
@@ -80,21 +80,7 @@ export const SectionCompanies1 = () => {
               <h3 className="text-4xl">Part 1</h3>
             </div>
           </motion.div>
-          <motion.div
-            className="flex items-center gap-4"
-            initial={{
-              opacity: "0",
-              translateY: "100%",
-            }}
-            whileInView={{
-              opacity: "1",
-              translateY: "0%",
-            }}
-            transition={{
-              duration: 0.5,
-              delay: 0.5,
-            }}
-          >
+          <div className="flex items-center gap-4">
             <CompanyBlock
               image={ImgNetworkX}
               title="Esports And Gaming Agency"
@@ -103,6 +89,7 @@ export const SectionCompanies1 = () => {
               community of over 300 000 subscribed players"
               email="info@mettlestat.com"
               link="mettlestate.com"
+              delay={0.5}
             />
             <CompanyBlock
               image={ImgNxd}
@@ -112,6 +99,7 @@ export const SectionCompanies1 = () => {
               community of over 300 000 subscribed players"
               email="info@mettlestat.com"
               link="mettlestate.com"
+              delay={0.75}
             />
             <CompanyBlock
               image={ImgMettlestate}
@@ -121,8 +109,9 @@ export const SectionCompanies1 = () => {
               community of over 300 000 subscribed players"
               email="info@mettlestat.com"
               link="mettlestate.com"
+              delay={1}
             />
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>
@@ -195,21 +184,7 @@ export const SectionCompanies2 = () => {
               <h3 className="text-4xl">Part 2</h3>
             </div>
           </motion.div>
-          <motion.div
-            className="flex items-center gap-4"
-            initial={{
-              opacity: "0",
-              translateY: "100%",
-            }}
-            whileInView={{
-              opacity: "1",
-              translateY: "0%",
-            }}
-            transition={{
-              duration: 0.5,
-              delay: 0.5,
-            }}
-          >
+          <div className="flex items-center gap-4">
             <CompanyBlock
               image={ImgNetworkX}
               title="Esports And Gaming Agency"
@@ -218,6 +193,7 @@ export const SectionCompanies2 = () => {
               community of over 300 000 subscribed players"
               email="info@mettlestat.com"
               link="mettlestate.com"
+              delay={0.5}
             />
             <CompanyBlock
               image={ImgNxd}
@@ -227,6 +203,7 @@ export const SectionCompanies2 = () => {
               community of over 300 000 subscribed players"
               email="info@mettlestat.com"
               link="mettlestate.com"
+              delay={0.75}
             />
             <CompanyBlock
               image={ImgMettlestate}
@@ -236,8 +213,9 @@ export const SectionCompanies2 = () => {
               community of over 300 000 subscribed players"
               email="info@mettlestat.com"
               link="mettlestate.com"
+              delay={1}
             />
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>
@@ -250,6 +228,7 @@ interface ICompanyBlock {
   description: string;
   email: string;
   link: string;
+  delay?: number;
 }
 
 const CompanyBlock = ({
@@ -258,9 +237,24 @@ const CompanyBlock = ({
   description,
   email,
   link,
+  delay = 0.5,
 }: ICompanyBlock) => {
   return (
-    <div className="flex w-full bg-zinc-900 rounded-2xl rounded-br-[3rem] flex-col gap-8 p-8 flex-shrink">
+    <motion.div
+      initial={{
+        opacity: 0,
+        translateY: "100px",
+      }}
+      whileInView={{
+        opacity: 1,
+        translateY: 0,
+      }}
+      transition={{
+        duration: 1,
+        delay,
+      }}
+      className="flex w-full bg-zinc-900 rounded-2xl rounded-br-[3rem] flex-col gap-8 p-8 flex-shrink"
+    >
       <div className="award-item-logo">
         <Image src={image} alt="mettlestate-grey" className=" w-auto h-16" />
       </div>
@@ -284,6 +278,6 @@ const CompanyBlock = ({
           {link}
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 };

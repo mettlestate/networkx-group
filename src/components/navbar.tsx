@@ -4,7 +4,7 @@ import ImgIconWhite from "@/assets/images/icon-white.png";
 
 const Navbar = () => {
   return (
-    <div className="w-full border-b border-white/50 z-50 fixed px-8 py-4">
+    <div className="w-full z-50 fixed px-8 py-4">
       <div className="flex flex-row w-full h-full">
         <div className="flex relative">
           <Image
