@@ -7,6 +7,7 @@ import {
   SectionCompanies2,
 } from "@/components/section-companies";
 import { SectionMain } from "@/components/section-home";
+import { SectionMettlestate } from "@/components/section-mettlestate";
 // import type { ReactNode } from "react";
 
 // function getInitialView() {
@@ -29,6 +30,7 @@ function App() {
       <SectionAbout />
       <SectionCompanies1 />
       <SectionCompanies2 />
+      <SectionMettlestate />
     </PagePiling>
   );
 }

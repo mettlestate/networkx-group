@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={heebo.className}>
-        <div className="h-screen w-screen">
+        <div className="h-screen w-screen bg-[#0a0a0a] text-white">
           <Navbar />
           {children}
         </div>

@@ -17,7 +17,7 @@ import ImgBgWaves2 from "@/assets/images/bg-waves-2.png";
 export const SectionCompanies1 = () => {
   return (
     <div
-      className="relative flex flex-col justify-center items-center bg-black w-full h-full text-white overflow-hidden pt-16"
+      className="relative flex flex-col justify-center items-center w-full h-full overflow-hidden pt-16"
       style={{
         // backgroundImage: `url("${ImgBgWaves1.src}")`,
         backgroundSize: "cover",
@@ -121,17 +121,17 @@ export const SectionCompanies1 = () => {
 export const SectionCompanies2 = () => {
   return (
     <div
-      className="relative flex flex-col justify-center items-center bg-black w-full h-full text-white overflow-hidden pt-16"
-      style={{
-        backgroundImage: `url("${ImgBgWaves2.src}")`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center center",
-      }}
+      className="relative flex flex-col justify-center items-center w-full h-full  overflow-hidden pt-16"
+      // style={{
+      //   backgroundImage: `url("${ImgBgWaves2.src}")`,
+      //   backgroundSize: "cover",
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundPosition: "center center",
+      // }}
     >
       <div className="flex items-center w-full justify-center">
         <div className="z-0">
-          <motion.div
+          {/* <motion.div
             initial={{
               translateX: "100%",
             }}
@@ -158,7 +158,7 @@ export const SectionCompanies2 = () => {
               delay: 0.5,
             }}
             className="absolute bottom-0 left-0 rounded-full bg-gray-900 w-[30vw] h-[30vw]"
-          ></motion.div>
+          ></motion.div> */}
         </div>
         <div className="container space-y-8 z-20">
           {/* <div className="absolute top-1/4 left-8 text-white/80">4</div> */}
@@ -186,7 +186,7 @@ export const SectionCompanies2 = () => {
           </motion.div>
           <div className="flex items-center gap-4">
             <CompanyBlock
-              image={ImgNetworkX}
+              image={ImgLuckyHustle}
               title="Esports And Gaming Agency"
               description="The heart of African gaming as the largest esports platform on
               the continent, who work hand in hand with their dedicated
@@ -196,7 +196,7 @@ export const SectionCompanies2 = () => {
               delay={0.5}
             />
             <CompanyBlock
-              image={ImgNxd}
+              image={ImgStratFarm}
               title="Esports And Gaming Agency"
               description="The heart of African gaming as the largest esports platform on
               the continent, who work hand in hand with their dedicated
@@ -206,7 +206,7 @@ export const SectionCompanies2 = () => {
               delay={0.75}
             />
             <CompanyBlock
-              image={ImgMettlestate}
+              image={ImgKasiKulcha}
               title="Esports And Gaming Agency"
               description="The heart of African gaming as the largest esports platform on
               the continent, who work hand in hand with their dedicated
@@ -253,7 +253,7 @@ const CompanyBlock = ({
         duration: 1,
         delay,
       }}
-      className="flex w-full bg-zinc-900 rounded-2xl rounded-br-[3rem] flex-col gap-8 p-8 flex-shrink"
+      className="flex w-full bg-[#111] rounded-2xl rounded-br-[3rem] flex-col gap-8 p-8 flex-shrink"
     >
       <div className="award-item-logo">
         <Image src={image} alt="mettlestate-grey" className=" w-auto h-16" />
