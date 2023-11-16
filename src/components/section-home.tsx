@@ -8,7 +8,7 @@ import ImgLogoWhite from "@/assets/images/logo-white.png";
 
 export const SectionMain = () => {
   return (
-    <div className="relative flex flex-col justify-center items-center bg-black w-full h-full text-white pt-16">
+    <div className="relative flex flex-col justify-center items-center  w-full h-full pt-16">
       <div className="absolute top-0 left-0 z-0 w-full h-full overflow-hidden bg-black/80">
         <video
           src="/assets/videos/humanly-possible.mp4"

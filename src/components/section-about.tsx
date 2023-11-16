@@ -12,7 +12,7 @@ import ImgKasiKulcha from "@/assets/images/kasi-kulcha-grey.png";
 
 export const SectionAbout = () => {
   return (
-    <div className="relative flex flex-col justify-center items-center bg-black w-full h-full text-white pt-16">
+    <div className="relative flex flex-col justify-center items-center bg-[#111] w-full h-full pt-16">
       <div className="container flex flex-col gap-16">
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="w-full space-y-8">
