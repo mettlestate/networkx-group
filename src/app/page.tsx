@@ -1,10 +1,11 @@
 "use client";
 
 import { submit } from "@/actions/contact";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
 
 const Form = () => {
+  const { pending } = useFormStatus();
   const [formMessage, formAction] = useFormState(submit, null);
   const [showSuccess, setShowSuccess] = useState(false);
   const [name, setName] = useState("");
@@ -97,7 +98,7 @@ const Form = () => {
                       </div> --> */}
         <div className="control-btn">
           <button className="btn btn-success" type="submit">
-            Send message
+            {pending ? "Sending..." : "Send message"}
           </button>
         </div>
       </form>
