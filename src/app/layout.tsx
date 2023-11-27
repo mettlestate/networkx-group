@@ -27,7 +27,7 @@ const heebo = Heebo({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Network X Group",
   description:
-    "We work side by side to make sure our clients targets are achieved holistically - through experts in different fields. From years crossing paths and working together successfully we decided to form partnerships with the industry's strongest. We created ways of working which benefit our clients and the different needs of each one. Each company has a full inhouse team, consisting of the industry's best in their respective fields. We provided multi-layered strategies (From ideas to implementation), which have an award-winning proven track record of achieving client KPIs.",
+    "We work side by side to make sure our clients targets are achieved holistically - through experts in different fields. From years crossing paths and working together successfully we decided to form partnerships with the industry&apos;s strongest. We created ways of working which benefit our clients and the different needs of each one. Each company has a full inhouse team, consisting of the industry&apos;s best in their respective fields. We provided multi-layered strategies (From ideas to implementation), which have an award-winning proven track record of achieving client KPIs.",
   icons: [
     "img/favicons/icon-72x72.png",
     "img/favicons/icon-192x192.png",
@@ -631,7 +631,7 @@ export default function RootLayout({
                         </div>
                         <div className="col-lg-5  ">
                           <div className="slide-title-info text-center animate-element fadeInDown delay7">
-                            Let's grab a coffee and{" "}
+                            Let&apos;s grab a coffee and{" "}
                             <span className="text-primary">have a chat.</span>
                           </div>
                           <div className=" animate-element fadeInUp delay7">
