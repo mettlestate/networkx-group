@@ -40,6 +40,14 @@
 
 @import url("https://fonts.googleapis./css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+@font-face {
+  font-family: "MonumentExtended";
+  src: url("../fonts/monumentextended-regular-webfont.woff2") format("woff2"),
+    url("../fonts/monumentextended-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 #root {
   --accent: #b99e64;
   --dark: #0a0a0a;
@@ -609,6 +617,10 @@ label.error {
 
 .brand img {
   height: 60px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: left;
 }
 .header-content {
   width: 100%;
@@ -1520,12 +1532,16 @@ label.error {
   height: 50px;
   display: flex;
   overflow: hidden;
+  justify-content: flex-start;
   align-items: center;
+  width: 100%;
 }
 
 .award-item-logo img {
   max-width: 100%;
   max-height: 100%;
+  object-fit: contain;
+  object-position: left;
 }
 
 .award-item-title {
