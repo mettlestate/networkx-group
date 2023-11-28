@@ -118,7 +118,7 @@ export default function RootLayout({
                 <div className="section pp-scrollable slide-dark slide-dark-footer slide-personal-intro">
                   <div className="slide-container relative">
                     <video
-                      src="assets/videos/humanly-possible.mp4"
+                      src="assets/videos/network-x-group.mp4"
                       autoPlay
                       loop
                       muted
@@ -132,6 +132,7 @@ export default function RootLayout({
                             src={ImgLogoWhiteGold}
                             className="img-fluid animate-element delay5 fadeIn"
                             alt="logo white gold"
+                            quality={100}
                           />
                         </div>
                       </div>
@@ -154,6 +155,9 @@ export default function RootLayout({
                             className="img-fluid animate-element delay5 fadeInDown pb-4"
                             style={{ maxHeight: "100px" }}
                             alt="logo white gold"
+                            width={600}
+                            height={82}
+                            quality={100}
                           />
                           <div className="animate-element delay5 fadeInUp">
                             <h3 className="slide-title-sub">

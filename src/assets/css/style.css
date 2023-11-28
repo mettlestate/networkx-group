@@ -49,7 +49,7 @@
 }
 
 #root {
-  --accent: #b99e64;
+  --accent: #d4ae71;
   --dark: #0a0a0a;
   --light: #111;
 }
@@ -68,7 +68,7 @@ a {
 }
 
 a:hover {
-  color: #b99e64;
+  color: #d4ae71;
   text-decoration: none;
 }
 
@@ -78,19 +78,19 @@ a.text-primary:hover {
 }
 
 ::selection {
-  background-color: #b99e64;
+  background-color: #d4ae71;
   color: #ffffff;
   text-shadow: none;
 }
 
 -webkit-::selection {
-  background-color: #b99e64;
+  background-color: #d4ae71;
   color: #ffffff;
   text-shadow: none;
 }
 
 ::-moz-selection {
-  background-color: #b99e64;
+  background-color: #d4ae71;
   color: #ffffff;
   text-shadow: none;
 }
@@ -102,7 +102,7 @@ a.text-primary:hover {
 
 ::-webkit-scrollbar-thumb {
   cursor: pointer;
-  background: #b99e64;
+  background: #d4ae71;
 }
 
 @media (min-width: 1200px) {
@@ -230,13 +230,13 @@ input:focus {
 label.error {
   margin-top: 0.5rem;
   margin-bottom: 0;
-  color: #b99e64;
+  color: #d4ae71;
 }
 
 .form-control.error,
 .form-control.error:focus {
-  border-color: #b99e64;
-  color: #b99e64;
+  border-color: #d4ae71;
+  color: #d4ae71;
 }
 
 .control-file {
@@ -268,7 +268,7 @@ label.error {
 }
 
 .control-file input.file-path::-moz-placeholder {
-  color: #b99e64;
+  color: #d4ae71;
   text-decoration: underline;
   opacity: 1;
   transition: color 0.3s ease;
@@ -279,7 +279,7 @@ label.error {
 }
 
 .control-file input.file-path:-ms-input-placeholder {
-  color: #b99e64;
+  color: #d4ae71;
   text-decoration: underline;
   transition: color 0.3s ease;
 }
@@ -289,7 +289,7 @@ label.error {
 }
 
 .control-file input.file-path::-webkit-input-placeholder {
-  color: #b99e64;
+  color: #d4ae71;
   text-decoration: underline;
   transition: color 0.3s ease;
 }
@@ -513,7 +513,7 @@ label.error {
   width: 18px;
   height: 18px;
   border-radius: 100%;
-  background-color: #b99e64;
+  background-color: #d4ae71;
   -webkit-animation: bouncedelay 1.4s infinite ease-in-out both;
   animation: bouncedelay 1.4s infinite ease-in-out both;
 }
@@ -902,7 +902,7 @@ label.error {
 
 .menu-main .active > a,
 .menu-main a:hover {
-  color: #b99e64;
+  color: #d4ae71;
 }
 
 .menu-main a:after {
@@ -979,7 +979,7 @@ label.error {
 }
 
 #pp-nav li .active span {
-  background-color: #b99e64;
+  background-color: #d4ae71;
 }
 
 @media (min-width: 1600px) {
@@ -1045,7 +1045,7 @@ label.error {
   font-size: 4vmin;
   font-family: "MonumentExtended", sans-serif;
   line-height: 1;
-  color: #b99e64;
+  color: #d4ae71;
   text-transform: uppercase;
 }
 
@@ -1162,7 +1162,7 @@ label.error {
 }
 
 .circle-golden {
-  background-color: #b99e64;
+  background-color: #d4ae71;
 }
 
 .circle-brown {
@@ -1205,6 +1205,7 @@ label.error {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .slide-personal-intro .slide-bg {
@@ -2141,7 +2142,7 @@ a:hover .center-icon i {
 .modal-title {
   font-family: "MonumentExtended", sans-serif;
   font-size: 2rem;
-  color: #b99e64;
+  color: #d4ae71;
   text-transform: uppercase;
 }
 
