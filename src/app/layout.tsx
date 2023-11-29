@@ -184,8 +184,8 @@ export default function RootLayout({
                           <div className="resp-iframe-container animate-element delay7 fadeInUp">
                             <iframe
                               className="resp-iframe"
-                              src="https://www.youtube.com/embed/rLMywLDjOFY?si=5AZH_omyDhixgAkD"
-                              title="YouTube video player"
+                              src="https://www.youtube.com/embed/DkZgDSXVU90?si=8Hv28JHeA8Z5-MRA"
+                              title="Network X Group"
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                               allowFullScreen
                             ></iframe>
