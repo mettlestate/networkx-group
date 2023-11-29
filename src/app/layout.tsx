@@ -28,11 +28,25 @@ export const metadata: Metadata = {
   title: "Network X Group",
   description:
     "We work side by side to make sure our clients targets are achieved holistically - through experts in different fields. From years crossing paths and working together successfully we decided to form partnerships with the industry&apos;s strongest. We created ways of working which benefit our clients and the different needs of each one. Each company has a full inhouse team, consisting of the industry&apos;s best in their respective fields. We provided multi-layered strategies (From ideas to implementation), which have an award-winning proven track record of achieving client KPIs.",
-  icons: [
-    "img/favicons/icon-72x72.png",
-    "img/favicons/icon-192x192.png",
-    "img/favicons/icon-512x512.png",
-  ],
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: {
+      url: "/apple-touch-icon.png",
+      sizes: "180x180",
+      type: "image/png",
+    },
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/safari-pinned-tab.svg",
+        color: "#333333",
+      },
+    ],
+  },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
