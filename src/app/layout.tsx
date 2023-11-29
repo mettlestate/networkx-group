@@ -132,7 +132,7 @@ export default function RootLayout({
                 <div className="section pp-scrollable slide-dark slide-dark-footer slide-personal-intro">
                   <div className="slide-container relative">
                     <video
-                      src="assets/videos/network-x-group.mp4"
+                      src="assets/videos/network-x-group-short.mp4"
                       autoPlay
                       loop
                       muted
