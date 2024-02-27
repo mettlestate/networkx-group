@@ -673,7 +673,7 @@ export default function RootLayout({
             </footer>
           </div>
         </div>
-        <Script src="https://code.jquery.com/jquery-1.12.4.min.js" defer />
+        <Script src="https://code.jquery.com/jquery-1.12.4.min.js" />
         <Script defer src="assets/js/bootstrap.bundle.min.js" />
         <Script defer src="assets/js/owl.carousel.min.js" />
         <Script defer src="assets/js/jquery.pagepiling.min.js" />
