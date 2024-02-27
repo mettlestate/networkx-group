@@ -631,7 +631,7 @@ export default function RootLayout({
                                       href="tel:+7068980751"
                                       className="phone-link"
                                     >
-                                      +2711 123 1234
+                                      +2711 807 5212
                                     </a>
                                   </div>
                                   <div className="text-md text-uppercase">

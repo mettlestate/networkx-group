@@ -11,10 +11,32 @@ export async function submit(_: any, data: FormData) {
 
   try {
     await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "developer@mettlestate.com",
-      subject: "Hello World",
-      html: "<p>Congrats on sending your <strong>first email</strong>!</p>",
+      from: "Mettlestate <developer@mettlestate.com>",
+      to: "info@networkx.co.za",
+      cc: "developer@mettlestate.com",
+      subject: "New NetworkX Group Contact",
+      html: `
+        <table>
+          <tbody>
+            <tr>
+              <td>Name</td>
+              <td>${name}</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>${email}</td>
+            </tr>
+            <tr>
+              <td>Company</td>
+              <td>${company}</td>
+            </tr>
+            <tr>
+              <td>Message</td>
+              <td>${message}</td>
+            </tr>
+          </tbody>
+        </table>
+      `,
     });
 
     return "success";
